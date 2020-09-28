@@ -3,3 +3,8 @@
 
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+
+application-real-oauth.properties
+
+build
+out
