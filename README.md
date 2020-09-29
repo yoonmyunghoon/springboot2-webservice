@@ -18,7 +18,18 @@
 
 - Lombok
 
+## 
+
 ## 알아볼 것들
 
 - mavenCentral
 - jcenter
+- JPA
+  - 자바 표준 ORM(Object Relational Mapping)
+  - 객체를 매핑
+  - 이 프로젝트에서는 JPA를 사용함
+- MyBatis, iBatis
+  - SQL Mapper
+  - 쿼리를 매핑
+  - Node.js 프로젝트(너밥보)에서 사용해봄
+- Spring Data JPA
