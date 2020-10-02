@@ -33,3 +33,4 @@
   - 쿼리를 매핑
   - Node.js 프로젝트(너밥보)에서 사용해봄
 - Spring Data JPA
+- H2
