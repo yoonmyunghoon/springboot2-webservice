@@ -18,8 +18,6 @@
 
 - Lombok
 
-## 
-
 ## 알아볼 것들
 
 - mavenCentral
@@ -34,6 +32,10 @@
   - Node.js 프로젝트(너밥보)에서 사용해봄
 - Spring Data JPA
 - H2
+  - 인메모리 데이터베이스
+  - 로컬, 테스트용 DB
+  - 어플리케이션 재시작 시, 초기화
+  - web console을 통해서 관리 가능
 - Spring 웹 계층
   - Web Layer
   - Service Layer
