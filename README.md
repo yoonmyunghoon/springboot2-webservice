@@ -151,6 +151,8 @@
     - 호스트네임 변경
       - 기존에 많이 사용했던 아마존 리눅스1과 아마존 리눅스2에는 약간의 차이가 존재함
       - 참고: https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/set-hostname.html
+- AWS RDS
+  - 
 
 
 
