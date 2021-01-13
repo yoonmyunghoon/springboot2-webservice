@@ -1,6 +1,6 @@
 # 스프링부트 프로젝트
 
-
+![Travis CI status](https://travis-ci.org/yoonmyunghoon/springboot2-webservice.svg?branch=master)
 
 ## 1. 목표
 
@@ -243,6 +243,31 @@
     - JSON에서 괄호를 제거한 형태
     - 읽고 쓰기가 쉬움
     - Travis CI 설정에도 사용됨(.travis.yml 파일)
+
+### Travis CI와 AWS S3 연동
+
+- AWS S3
+  - AWS에서 제공하는 일종의 파일 서버
+  - 이미지와 같은 정적 파일 및 배포 파일 관리 기능
+- AWS CodeDeploy
+  - 배포 서비스
+  - 저장 기능이 없음
+  - 빌드와 배포가 분리되지 않음
+    - 깃허브에서 코드를 가져오는 기능이 있음
+    - 빌드 없이 배포만 필요할 때는 대응하기 어려움
+    - 항상 빌드를 진행해야하기 때문에 확장성이 떨어짐 
+- 빌드 및 배포 단계
+  1. Github master 브랜치에 push
+  2. Travis CI로 테스트 및 빌드
+  3. 빌드 결과물을 S3에 전달
+  4. CodeDeploy에 배포 요청
+  5. CodeDeploy가 S3로부터 배포파일을 전달받음
+  6. 배포
+- IAM(Identity and Access Management)
+  - 일반적으로 AWS서비스에 외부 서비스가 접근할 수 없음
+  - 접근 가능한 권한을 가진 Key를 사용해야함
+  - 이러한 인증과 관련된 기능을 제공하는 서비스
+  - 이를 통해 Travis CI가 S3와 CodeDeploy에 접근할 수 있음
 
 
 
