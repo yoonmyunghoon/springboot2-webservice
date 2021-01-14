@@ -278,6 +278,11 @@
 - CodeDeploy 생성
 - Travis CI와 AWS S3, CodeDeploy 연동
 
+### travis-ci.org shut down
+
+- 기존에 사용하던 Travis CI 무료 버전 서버(travis-ci.org)가 2021년부터 없어지고, pro버전 서버(travis-ci.com)로 통합됨
+- 해당 repository 마이그레이션
+
 
 
 
