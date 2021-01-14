@@ -268,6 +268,17 @@
   - 접근 가능한 권한을 가진 Key를 사용해야함
   - 이러한 인증과 관련된 기능을 제공하는 서비스
   - 이를 통해 Travis CI가 S3와 CodeDeploy에 접근할 수 있음
+  - 사용자와 역할의 차이
+    - 사용자: AWS 서비스 외에 사용할 수 있는 권한
+    - 역할: AWS 서비스에만 할당할 수 있는 권한
+
+### Travis CI와 AWS S3, CodeDeploy 연동
+
+- EC2에 CodeDeploy 에이전트 설치
+- CodeDeploy 생성
+- Travis CI와 AWS S3, CodeDeploy 연동
+
+
 
 
 
