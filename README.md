@@ -1,6 +1,8 @@
 # 스프링부트 프로젝트
 
-![Travis CI status](https://travis-ci.org/yoonmyunghoon/springboot2-webservice.svg?branch=master)
+![Travis CI status](https://travis-ci.com/yoonmyunghoon/springboot2-webservice.svg?branch=master)
+
+
 
 ## 1. 목표
 
@@ -282,6 +284,10 @@
 
 - 기존에 사용하던 Travis CI 무료 버전 서버(travis-ci.org)가 2021년부터 없어지고, pro버전 서버(travis-ci.com)로 통합됨
 - 해당 repository 마이그레이션
+
+
+
+
 
 
 
