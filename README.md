@@ -285,11 +285,43 @@
 - 기존에 사용하던 Travis CI 무료 버전 서버(travis-ci.org)가 2021년부터 없어지고, pro버전 서버(travis-ci.com)로 통합됨
 - 해당 repository 마이그레이션
 
+### deploy.sh 수정
 
+- grep jar을 포함한 명령어로는 실행중인 프로세스를 찾을 수 없었음
 
+```sh
+# as-is
+CURRENT_PID=$(pgrep -fl $PROJECT_NAME | grep jar | awk '{print $1}')
+# to-be
+CURRENT_PID=$(pgrep -fl $PROJECT_NAME | grep java | awk '{print $1}')
+```
 
+### 무중단 배포
 
+- 무중단 배포 방식
+  - AWS의 블루 그린
+  - 도커를 이용한 방식
+  - L4스위치를 이용한 방식
+  - Nginx를 이용하는 방식
+  - ...
+- Nginx를 이용하는 방식 채택
+  - Nginx
+    - 웹 서버, 리버스 프록시, 캐싱, 로드 밸런싱, 미디어 스트리밍 등을 위한 오픈소스 소프트웨어
+    - 리버스 프록시
+      - Nginx가 외부의 요청을 받아 백엔드 서버로 요청을 전달하는 행위
+      - 리버스 프록시 서버(Nginx)는 요청을 전달하고, 실제 요청에 대한 처리는 뒷단의 WAS가 처리
+  - Nginx를 이용하는 이유
+    - 가장 저렴하고 쉬움
+    - 클라우드 인프라가 아니더라도 개인 서버나 사내 서버에서도 동일한 방식으로 구축할 수 있음
+- 구조
+  - 하나의 EC2 또는 리눅스 서버에 엔진엑스 1대와 스프링 부트 jar 2대를 사용하는 것
+  - 엔진엑스에 80(http), 443(https) 포트 할당
+  - 각각의 스프링 부트는 8081, 8082포트로 실행
+- 운영 과정
+  - 업데이트가 필요하면 연결되어 있지 않은 스프링부트에 배포를 하고, 정상작동 확인 후, Nginx의 연결을 바꿔줌
+- 전체 구조
 
+![structure](images/structure.png)
 
 
 
