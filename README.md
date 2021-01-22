@@ -1,4 +1,4 @@
-# 스프링부트 프로젝트
+# 스프링부트 프로젝트 - Grouping(그루핑)
 
 ![Travis CI status](https://travis-ci.com/yoonmyunghoon/springboot2-webservice.svg?branch=master)
 
@@ -322,6 +322,12 @@ CURRENT_PID=$(pgrep -fl $PROJECT_NAME | grep java | awk '{print $1}')
 - 전체 구조
 
 ![structure](images/structure.png)
+
+
+
+
+
+## 5. Grouping 개발
 
 
 
