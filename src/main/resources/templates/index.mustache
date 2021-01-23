@@ -1,54 +1,38 @@
 {{>layout/header}}
 
-<h1>그루핑(Grouping, MBTI 커뮤니티 사이트)</h1>
-<div class="col-md-12">
-    <!-- 로그인 기능 영역 -->
-    <ul class="nav justify-content-end">
-        {{#userName}}
-            <li class="nav-item">
-                Logged in as: <span id="user">{{userName}}</span>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-        {{/userName}}
-        {{^userName}}
-            <li class="nav-item">
-                <a class="nav-link" href="/oauth2/authorization/google">Google Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/oauth2/authorization/naver">Naver Login</a>
-            </li>
-        {{/userName}}
-    </ul>
-    <!-- 글 등록 버튼 -->
-    <div class="row">
-        <div class="col-md-6">
-            <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+
+<img src="/images/ex.png" class="d-block w-100" alt="ex">
+<div style="position:relative; margin-right:50px; margin-left:50px">
+    <div class="col-md-12">
+        <!-- 글 등록 버튼 -->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+            </div>
         </div>
-    </div>
-    <br>
-    <!-- 목록 출력 영역 -->
-    <table class="table table-horizontal table-bordered">
-        <thead class="thead-strong">
-        <tr>
-            <th>게시글번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>최종수정일</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        {{#posts}}
+        <br>
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
             <tr>
-                <td>{{id}}</td>
-                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
-                <td>{{author}}</td>
-                <td>{{modifiedDate}}</td>
+                <th>게시글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>최종수정일</th>
             </tr>
-        {{/posts}}
-        </tbody>
-    </table>
+            </thead>
+            <tbody id="tbody">
+            {{#posts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 {{>layout/footer}}
