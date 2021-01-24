@@ -329,5 +329,19 @@ CURRENT_PID=$(pgrep -fl $PROJECT_NAME | grep java | awk '{print $1}')
 
 ## 5. Grouping 개발
 
+### 백엔드
+
+- 개발 기술 스택: Java, Spring Boot, JPA, mariaDB
+- 배포 환경: AWS EC2
+- 배포 자동화 기술 스택: Travis CI, AWS S3, AWS Codedeploy
+- 무중단 배포: Nginx
+
+### 프론트엔드
+
+- 템플릿 엔진: mustache
+- 프론트엔드 라이브러리: bootstrap
+
+
+
 
 
