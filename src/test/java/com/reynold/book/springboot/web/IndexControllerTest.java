@@ -25,4 +25,13 @@ public class IndexControllerTest {
         //then
         assertThat(body).contains("그루핑");
     }
+
+    @Test
+    public void 자유게시판_로딩() {
+        //when
+        String body = this.restTemplate.getForObject("/free-posts", String.class);
+
+        //then
+        assertThat(body).contains("그루핑");
+    }
 }

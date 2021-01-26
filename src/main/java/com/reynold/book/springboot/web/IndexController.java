@@ -21,11 +21,19 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
-        model.addAttribute("posts", postsService.findAllDesc());
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
         return "index";
+    }
+
+    @GetMapping("/free-posts")
+    public String freePosts(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+        return "free-posts";
     }
 
     @GetMapping("/posts/save")
