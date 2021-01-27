@@ -329,12 +329,45 @@ CURRENT_PID=$(pgrep -fl $PROJECT_NAME | grep java | awk '{print $1}')
 
 ## 5. Grouping 개발
 
+### 개요
+
+- MBTI 성향이 같은 사람들끼리 고민이나 생각을 공유할 수 있는 커뮤니티
+
+### 기능
+
+- 전체게시판
+  - MBTI 성향과 관계없이 이야기할 수 있는 공간
+- MBTI 게시판
+  - 16개의 성향 타입별 게시판
+- 댓글 기능
+- 소셜로그인 기능
+  - 구글, 네이버
+
 ### 백엔드
 
-- 개발 기술 스택: Java, Spring Boot, JPA, mariaDB
+#### 기술 스택
+
+- 개발 기술: Java, Spring Boot, JPA, mariaDB, gradle
 - 배포 환경: AWS EC2
 - 배포 자동화 기술 스택: Travis CI, AWS S3, AWS Codedeploy
 - 무중단 배포: Nginx
+
+#### DB 설계
+
+- Entity
+  - user
+    - id, nickname, name, email, picture, role
+    - 소셜로그인 사용
+    - nickname 처음에는 'user'+id 로 값을 주고, 후에 변경가능하도록 하자
+      - unique
+  - posts
+    - id, title, content, user, type
+    - type에는 전체게시판, MBTI 16개 타입, 공지사항까지 총 18개
+    - type 컬럼을 index설정해서 조회속도 높이기
+  - comments
+    - id, content, posts, user
+
+
 
 ### 프론트엔드
 
